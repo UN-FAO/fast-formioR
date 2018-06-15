@@ -24,7 +24,7 @@ Until now we only support the GET HTTP request, as we mainly use this library to
 
 # Quick Example
 
-No time to read? No worries, here you have a quick example of all of the think you can do
+No time to read? No worries, here you have a quick example of all you can do
 
 ```R
 token <- "P9reVWfdJiI5rc7qre4bn2HVcdyJJi1"
