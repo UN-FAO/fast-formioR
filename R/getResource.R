@@ -4,7 +4,6 @@
 #' @param base_url Base formio URL
 #' @param resource_path Name of the path of the form ie: 'user'.
 #' @param token The formio token to allow access
-#' @keywords formio
 #' @export
 #' @examples
 #' Formior()
@@ -97,7 +96,7 @@ Formior <-  R6::R6Class("Formior",
       selectString <- substr(selectString, 1, nchar(selectString)-1) 
       return(selectString)
     },
-    #' Sets the proper Select URL for the GET CALL
+    #' Sets the proper Populate URL for the GET CALL
     #'
     #' Parses the list of select elements to a single string
     #' @param filter The list of items to include in the select
@@ -177,8 +176,7 @@ Formior <-  R6::R6Class("Formior",
 
     #' Extract all results of a given resource or form
     #'
-    #' This function allows you to express your love of cats.
-    #' @param chunk_size How many elements to extract, usefull for large Data sets
+    #' This function pulls the records
     #' @keywords formio
     #' @export
     #' @examples
