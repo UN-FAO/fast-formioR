@@ -21,8 +21,6 @@ Formior
 
 \item{filter}{The list of items to include in the select}
 
-\item{chunk_size}{How many elements to extract, usefull for large Data sets}
-
 \item{filters}{the list of filters}
 
 \item{select}{the list of select}
@@ -46,7 +44,7 @@ Sets the proper Select URL for the GET CALL
 
 Parses the list of select elements to a single string
 selectToString()
-Sets the proper Select URL for the GET CALL
+Sets the proper Populate URL for the GET CALL
 
 Parses the list of select elements to a single string
 selectToString()
@@ -60,8 +58,12 @@ Returns the first chunk size depending on the limit and chunks defined
 getChunkSize()
 Extract all results of a given resource or form
 
-This function allows you to express your love of cats.
+This function pulls the records
 get()
+Gets the current selection and flattens the dataframe to a single dimension
+
+This function flattens and returns a dataframe.
+flatten()
 Applies the filters
 
 filter()

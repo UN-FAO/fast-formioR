@@ -274,6 +274,32 @@ Formior <-  R6::R6Class("Formior",
       final_result <- jsonlite::rbind_pages(chunks)
       return(final_result)
     },
+
+    #' Gets the current selection and flattens the dataframe to a single dimension
+    #' 
+    #' This function flattens and returns a dataframe.
+    #' @export
+    #' @examples
+    #' flatten()
+    flatten = function() {
+      df <- self$get()
+                 
+      df[df == "NULL"] <- list(list())
+                   
+      for(i in 1:ncol(df)) {
+        if (class(df[[i]]) == "list") {
+          colname <- colnames(df)[i]
+          unnested <- tidyr::unnest_(data = df, unnest_cols = colname, .sep = ".", .drop = TRUE, .preserve = dplyr::everything())
+          if (nrow(unnested) > 0) {
+            df <- df[!df[['_id']] %in% unnested[['_id']], ]
+            df <- dplyr::bind_rows(df, unnested)
+            df <- subset(df, select = names(df) != colname)
+          }
+        }
+      }
+                            
+      return(df)
+    },
     
     #' Applies the filters
     #'

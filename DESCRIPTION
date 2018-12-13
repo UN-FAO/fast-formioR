@@ -1,13 +1,17 @@
 Package: formior
-Title: R Wraper For Form.io Resources
-Version: 0.0.2
-Authors@R: person("Ignacio", "Cabrera", email = "cabrerabywaters@gmail.com", role = c("aut", "cre"))
-Description: R Wraper For Form.io Resources. You will have full access to CRUD operations on Form.io
+Title: R Wrapper For Form.io Resources
+Version: 0.0.3
+Authors@R: c(
+    person("Ignacio", "Cabrera", email = "cabrerabywaters@gmail.com", role = c("aut", "cre")),
+    person("Tomas", "Castro", email = "tcastrog10@gmail.com", role = "aut"))
+Description: R Wrapper For Form.io Resources. You will have full access to CRUD operations on Form.io
 Depends: R (>= 3.4.4)
 License: MIT
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1.9000
+RoxygenNote: 6.1.1
 Imports: httr,
     jsonlite,
+    tidyr,
+    dplyr,
     R6
